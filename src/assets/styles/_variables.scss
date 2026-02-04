@@ -1,0 +1,7 @@
+@use '@/assets/styles/helpers/functions' as *;
+
+:root {
+  --container-width: #{rem(1600)};
+  --container-padding-x: #{rem(16)};
+  --transition-duration: 0.2s;
+}
