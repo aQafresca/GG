@@ -1,0 +1,25 @@
+@use '@/assets/styles/helpers/functions' as *;
+
+.wrapper {
+  display: flex;
+  gap: to-rem(20);
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: to-rem(10);
+  max-width: to-rem(600);
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+.animation {
+  width: to-rem(60);
+}

@@ -1,0 +1,66 @@
+@use '@/assets/styles/variables' as *;
+@use '@/assets/styles/helpers/media' as *;
+@use '@/assets/styles/helpers/functions' as *;
+
+.trigger {
+  display: block;
+
+  border: none;
+
+  color: var(--colar--accent);
+
+  background: transparent;
+  outline: none;
+
+  @include mobile-above {
+    display: none;
+  }
+}
+
+.overlay {
+  pointer-events: none;
+
+  position: fixed;
+  inset: 0;
+
+  opacity: 0;
+  background: rgb(0 0 0 / 70%);
+
+  transition: opacity var(--transition-duration) ease;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+
+  width: 100%;
+  max-width: to-rem(430);
+  height: 100dvh;
+  border-left: to-rem(1.5) solid var(--swatch--border);
+
+  background: rgb(255 255 255 / 15%);
+  backdrop-filter: blur(12px);
+
+  transition: transform var(--transition-duration);
+
+  @include mobile-s {
+    border: none;
+  }
+}
+
+.open.overlay {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.open.drawer {
+  transform: translateX(0);
+}
+
+.menu__mobile {
+  display: flex;
+  flex-direction: column;
+  gap: to-rem(20);
+}

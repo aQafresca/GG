@@ -1,0 +1,134 @@
+@use '@/assets/styles/helpers/functions' as *;
+@use '@/assets/styles/helpers/media' as *;
+
+.button {
+  --s: 10px;
+  --pad: 2px;
+
+  cursor: pointer;
+
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: to-rem(10);
+  border: to-rem(1.5) solid var(--swatch--border);
+
+  font-size: 16px;
+  color: var(--swatch--light);
+
+  appearance: none;
+
+  //  background: linear-gradient(to right, rgb(255 255 255 / 5%), rgb(255 255 255 / 20%));
+  transition:
+    background var(--animation-timing) ease,
+    border var(--animation-timing) ease;
+
+  &::before {
+    pointer-events: none;
+    will-change: inset, padding;
+    content: '';
+
+    position: absolute;
+    inset: calc(-1 * var(--pad));
+
+    box-sizing: border-box;
+    padding: var(--pad);
+    border: 2px solid white;
+
+    backface-visibility: hidden;
+    background: transparent content-box;
+
+    mask:
+      conic-gradient(#000 0 0) content-box,
+      conic-gradient(at var(--s) var(--s), #0000 75%, #000 0) 0 0 / calc(100% - var(--s)) calc(100% - var(--s));
+
+    transition:
+      inset var(--transition-duration) ease,
+      padding var(--transition-duration) ease,
+      border-color var(--transition-duration) ease;
+  }
+
+  @include hover {
+    --pad: 6px;
+
+    border: 1px solid var(--colar--accent);
+    background: linear-gradient(
+      to right,
+      color(from var(--colar--accent) srgb r g b / 5%),
+      color(from var(--colar--accent) srgb r g b / 20%)
+    );
+
+    &::before {
+      border-color: var(--colar--accent);
+    }
+  }
+}
+
+.accent {
+  background: linear-gradient(
+    to right,
+    color(from var(--colar--accent) srgb r g b / 5%),
+    color(from var(--colar--accent) srgb r g b / 30%)
+  );
+
+  &::before {
+    border: to-rem(1.5) solid var(--colar--accent);
+  }
+
+  @include hover {
+    color: #000;
+    background: linear-gradient(
+      to right,
+      color(from var(--colar--accent) srgb r g b / 2%),
+      color(from var(--colar--accent) srgb r g b / 90%)
+    );
+  }
+}
+
+.outline {
+  background: transparent;
+}
+
+.ghost {
+  border: none;
+  background-color: transparent;
+
+  &::before {
+    border: none;
+  }
+
+  @include hover {
+    transform: scaleX(0.8);
+    border: none;
+    background: transparent;
+  }
+}
+
+.xs {
+  font-size: to-rem(14);
+}
+
+.sm {
+  max-width: to-rem(100);
+  height: to-rem(35);
+  font-size: to-rem(16);
+}
+
+.md {
+  max-width: to-rem(300);
+  height: to-rem(40);
+  font-size: to-rem(18);
+}
+
+.lg {
+  max-width: to-rem(400);
+  height: to-rem(50);
+  font-size: to-rem(20);
+}
+
+.disabled {
+  cursor: not-allowed;
+}

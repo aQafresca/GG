@@ -1,15 +1,15 @@
 @use 'sass:math';
 
-@function rem($pixel) {
+@function to-rem($pixel) {
   @if math.is-unitless($pixel) {
     @return math.div($pixel, 16) + rem;
-  } @else {
-    @error 'Не используйте единицы измерения при работе с функцией rem()! Передавайте аргументом только числа.';
   }
+
+  @error "px-to-rem() expects a unitless number";
 }
 
 @function fluid($max: 100, $min: 10) {
-  $maxViewportWidth: 1600;
+  $maxViewportWidth: 1480;
   $minViewportWidth: 390;
   $maxSize: math.div($max, 16);
   $minSize: math.div($min, 16);

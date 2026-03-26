@@ -1,0 +1,7 @@
+@use '@/assets/styles/helpers/functions' as *;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: to-rem(50);
+}

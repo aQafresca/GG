@@ -1,0 +1,57 @@
+@use '@/assets/styles/helpers/functions' as *;
+@use '@/assets/styles/helpers/mixins' as *;
+
+.wrapper {
+  width: 100%;
+  padding: 0 to-rem(10);
+  border-bottom: 1px solid var(--swatch--border);
+}
+
+.trigger {
+  cursor: pointer;
+
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+  padding: to-rem(10) 0;
+  border: none;
+
+  background: none;
+}
+
+.icon {
+  color: var(--colar--accent);
+
+  @include fluid-text(20, 16);
+
+  transition: transform var(--transition-duration) ease;
+}
+
+.active {
+  .content {
+    grid-template-rows: 1fr;
+  }
+}
+
+.content {
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--transition-duration) ease;
+}
+
+.answer {
+  overflow: hidden;
+  min-height: 0;
+}
+
+.inner {
+  padding-bottom: to-rem(10);
+}
+
+.title {
+  color: var(--swatch--light);
+
+  @include fluid-text(22, 20);
+}

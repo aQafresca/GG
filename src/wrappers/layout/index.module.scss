@@ -1,0 +1,32 @@
+@use '@/assets/styles/helpers/mixins' as *;
+@use '@/assets/styles/helpers/functions' as *;
+
+.layout {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100%;
+
+  font-family: var(--font--primary-family), sans-serif;
+  color: var(--swatch--light);
+
+  background-color: var(--swatch--dark);
+  background-image:
+    linear-gradient(rgb(255 255 255 / 5%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(255 255 255 / 5%) 1px, transparent 1px);
+  background-attachment: fixed;
+  background-size: var(--cell) var(--cell);
+
+  -webkit-font-smoothing: antialiased;
+
+  @include fluid-text(20, 16);
+}
+
+.main {
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+  gap: to-rem(50);
+
+  width: 100%;
+}

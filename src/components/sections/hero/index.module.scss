@@ -1,0 +1,63 @@
+@use '@/assets/styles/helpers/functions' as *;
+@use '@/assets/styles/helpers/mixins' as *;
+@use '@/assets/styles/helpers/media' as *;
+
+.hero {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+
+  width: 100%;
+  height: 96vh;
+  margin-top: to-rem(-45);
+  padding: to-rem(3);
+
+  background: var(--swatch--dark-gray);
+  clip-path: polygon(
+    calc(100% - 9rem) 0,
+    calc(100% - 6rem) 3rem,
+    100% 3rem,
+    100% calc(100% - 1.5rem),
+    calc(100% - 1.5rem) 100%,
+    1.5rem 100%,
+    0 calc(100% - 1.5rem),
+    0 3rem,
+    6rem 3rem,
+    9rem 0
+  );
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: to-rem(20);
+
+  max-width: to-rem(650);
+  padding: to-rem(30);
+
+  @include tablet {
+    max-width: to-rem(500);
+  }
+}
+
+.title {
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.slogan {
+  max-width: to-rem(350);
+  font-family: inherit;
+
+  @include fluid-text(20, 14);
+
+  @include tablet {
+    max-width: to-rem(310);
+  }
+
+  @include mobile {
+    max-width: to-rem(270);
+  }
+}
