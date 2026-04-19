@@ -7,7 +7,9 @@ import styles from './index.module.scss';
 export const Logo = () => {
   return (
     <div className={styles.wrapper}>
-      <Link to={ROUTES.HOME}>LOGO</Link>
+      <Link to={ROUTES.HOME}>
+        <img src="src/assets/images/logo.png" alt="логотип" />
+      </Link>
     </div>
   );
 };

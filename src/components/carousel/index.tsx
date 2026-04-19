@@ -1,7 +1,7 @@
 import { useMemo, useRef, useState } from 'react';
 import * as React from 'react';
 
-import { Button } from '@/components/buttons/base';
+import { SliderControls } from '@/components/buttons/slider-controls';
 import { ReviewCard } from '@/components/review-card';
 import { useWindowWidth } from '@/shared/hooks/useWindowWidth.ts';
 import { CAROUSEL_CONFIG } from '@/shared/lib/config';
@@ -43,15 +43,7 @@ export const Carousel = () => {
 
   return (
     <div className={styles.wrapper} aria-atomic="true">
-      <div className={styles.controls}>
-        <Button className={styles.button} variant={'ghost'} onClick={() => move(-1)}>
-          <img src="src/assets/images/svg/left_arrow.svg" alt="предыдущий отзыв" />
-        </Button>
-
-        <Button className={styles.button} variant={'ghost'} onClick={() => move(1)}>
-          <img src="src/assets/images/svg/right_arrow.svg" alt="следующий отзыв" />
-        </Button>
-      </div>
+      <SliderControls move={move} />
 
       <div
         className={styles.view}

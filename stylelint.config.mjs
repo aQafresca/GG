@@ -4,5 +4,6 @@ export default {
   rules: {
     'scss/dollar-variable-pattern': null,
     'selector-class-pattern': null,
+    'custom-property-pattern': null,
   },
 };

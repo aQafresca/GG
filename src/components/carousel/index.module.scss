@@ -39,23 +39,6 @@
     opacity 0.6s ease;
 }
 
-.controls {
-  z-index: 200;
-  display: flex;
-  gap: to-rem(50);
-
-  @include mobile-s-above {
-    position: absolute;
-    justify-content: space-between;
-    width: 100%;
-  }
-
-  @include mobile-s {
-    justify-content: center;
-    order: 2;
-  }
-}
-
 .view {
   display: flex;
   align-items: center;
@@ -74,12 +57,5 @@
 
   @include tablet {
     perspective: 600px;
-  }
-}
-
-.button {
-  @include mobile {
-    pointer-events: auto;
-    width: to-rem(50);
   }
 }
