@@ -2,7 +2,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect, useCallback, useRef } from 'react';
 
 import { Button } from '@/components/buttons/base';
-import { SliderControls } from '@/components/buttons/slider-controls';
 import { SLIDES } from '@/shared/lib/config';
 
 import styles from './index.module.scss';
@@ -112,7 +111,9 @@ export const Services = () => {
       </AnimatePresence>
 
       <div className={styles.controls}>
-        <SliderControls move={paginate} />
+        <Button className={styles.button} variant={'ghost'} onClick={() => paginate(-1)}>
+          <img src="src/assets/images/svg/left_arrow.svg" alt="предыдущий слайд" />
+        </Button>
         <div className={styles.pagination} role="tablist" aria-label="Slide navigation">
           {SLIDES.map((slide, id) => (
             <div
@@ -133,6 +134,9 @@ export const Services = () => {
             </div>
           ))}
         </div>
+        <Button className={styles.button} variant={'ghost'} onClick={() => paginate(1)}>
+          <img src="src/assets/images/svg/right_arrow.svg" alt="следующий слайд" />
+        </Button>
       </div>
     </section>
   );
