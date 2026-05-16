@@ -1,3 +1,11 @@
-.wrapper {
-  background: transparent;
+@use '@/assets/styles/helpers/functions' as *;
+@use '@/assets/styles/helpers/mixins' as *;
+@use '@/assets/styles/helpers/media' as *;
+
+.box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: to-rem(30);
+  align-items: center;
+  justify-content: space-around;
 }

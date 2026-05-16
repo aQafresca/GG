@@ -10,8 +10,8 @@ export const RouterManager = new Manager({
     about: {
       url: ROUTES.ABOUT,
     },
-    faq: {
-      url: ROUTES.FAQ,
+    portfolio: {
+      url: ROUTES.PORTFOLIO,
     },
   },
 });

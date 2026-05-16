@@ -6,7 +6,11 @@ import { NavMenu } from '@/components/leyouts/header/nav-menu';
 
 import styles from './index.module.scss';
 
-export const MobileMenu = () => {
+interface IProps {
+  className?: string;
+}
+
+export const MobileMenu = ({ className }: IProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -25,13 +29,13 @@ export const MobileMenu = () => {
     return () => mq.removeEventListener('change', handler);
   }, []);
 
-  const hendleCloseMenu = () => {
+  const handleCloseMenu = () => {
     setIsOpen(false);
   };
 
   return (
     <>
-      <button className={styles.trigger}>
+      <button className={`${className} ${styles.trigger}`}>
         <Hamburger toggled={isOpen} toggle={setIsOpen} />
       </button>
 
@@ -39,7 +43,7 @@ export const MobileMenu = () => {
         <>
           <div className={`${styles.overlay} ${isOpen ? styles.open : ''}`} onClick={() => setIsOpen(false)} />
           <aside className={`${styles.drawer} ${isOpen ? styles.open : ''}`}>
-            <NavMenu className={styles.menu__mobile} onClose={hendleCloseMenu} />
+            <NavMenu className={styles.menu__mobile} onClose={handleCloseMenu} />
           </aside>
         </>,
         document.body,

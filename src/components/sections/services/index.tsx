@@ -1,6 +1,8 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect, useCallback, useRef } from 'react';
 
+import LeftArrow from '@/assets/images/svg/left_arrow.svg?react';
+import RightArrow from '@/assets/images/svg/right_arrow.svg?react';
 import { Button } from '@/components/buttons/base';
 import { SLIDES } from '@/shared/lib/config';
 
@@ -77,7 +79,16 @@ export const Services = () => {
   const currentSlide = SLIDES[index];
 
   return (
-    <section className={styles.wrapper} role="region" aria-label="Services carousel" aria-roledescription="carousel">
+    <section
+      className={`container ${styles.services}`}
+      role="region"
+      aria-label="Services carousel"
+      aria-roledescription="carousel"
+    >
+      <div className={styles.inner}>
+        <h4 className={styles.title}>Что мы делаем лучше всего</h4>
+        <h5 className={styles.subtitle}>Наши услуги по организации мероприятий</h5>
+      </div>
       <AnimatePresence custom={direction} mode="wait">
         <motion.div
           key={currentSlide.id}
@@ -112,7 +123,7 @@ export const Services = () => {
 
       <div className={styles.controls}>
         <Button className={styles.button} variant={'ghost'} onClick={() => paginate(-1)}>
-          <img src="src/assets/images/svg/left_arrow.svg" alt="предыдущий слайд" />
+          <LeftArrow />
         </Button>
         <div className={styles.pagination} role="tablist" aria-label="Slide navigation">
           {SLIDES.map((slide, id) => (
@@ -135,7 +146,7 @@ export const Services = () => {
           ))}
         </div>
         <Button className={styles.button} variant={'ghost'} onClick={() => paginate(1)}>
-          <img src="src/assets/images/svg/right_arrow.svg" alt="следующий слайд" />
+          <RightArrow />
         </Button>
       </div>
     </section>

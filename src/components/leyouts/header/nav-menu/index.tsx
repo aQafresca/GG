@@ -14,7 +14,7 @@ export const NavMenu = ({ className, onClose }: INavMenuLink) => {
     <nav className={styles.menu}>
       <ul className={className}>
         {Object.values(navMenuLinksConfig).map((link) => (
-          <li className={styles.list} key={link.route}>
+          <li className={styles.list} key={link.id}>
             <Link className={styles.link} to={link.route} onClick={onClose}>
               {link.title}
             </Link>

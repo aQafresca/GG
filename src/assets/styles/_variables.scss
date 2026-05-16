@@ -2,24 +2,29 @@
 
 :root {
   --color--primary: #085208;
-  --colar--secondary: #390852;
-  --colar--accent: rgb(235 251 29);
-  --colar--accent-light: rgb(235 251 29 / 30%);
+  --color--secondary: #390852;
+  --color--accent-primary: rgb(235 251 29);
+  --color--accent-secondary: rgb(255 79 31);
+  --color--accent-30: rgb(235 251 29 / 30%);
   --swatch--dark: #131313;
   --swatch--light: #c5b6af;
-  --swatch--accent: #f00;
-  --swatch--light-fade: rgb(197 182 175 / 20%);
+  --swatch--transparent: transparent;
+  --swatch--light-20: rgb(197 182 175 / 20%);
   --swatch--border: rgb(255 255 255 / 19%);
   --swatch--dark-gray: rgb(51 50 48 / 60%);
   --max-h: #{to-rem(200)};
   --cell: #{to-rem(50)};
-  --mask--svg-border: url('/src/assets/images/svg/pattern.svg');
-  --font--primary-family: 'Suisseintl';
-  --font--secondary-family: 'Parabole';
-  --font--tertiary-family: 'Ppfraktionmono', monospace;
+  --mask--svg-border_top: url('/src/assets/images/svg/border_top.svg');
+  --mask--svg-border_bottom: url('/src/assets/images/svg/border_bottom.svg');
+  --font--primary: 'Geologica';
+  --font--secondary: 'JetBrains Mono';
+
+  //  --font--primary-family: 'Suisseintl';
+  //  --font--secondary-family: 'Parabole';
+  //  --font--tertiary-family: 'Ppfraktionmono', monospace;
   --image--clip-psth:
     0px 10%, 10% 0px, 80% 0px, 90% 10%, 90% 30%, 100% 40%, 100% 90%, 90% 100%, 40% 100%, 30% 90%, 10% 90%, 0px 80%;
   --container-width: #{to-rem(1600)};
   --container-padding-x: #{to-rem(16)};
-  --transition-duration: 0.2s;
+  --transition-duration: 0.3s;
 }

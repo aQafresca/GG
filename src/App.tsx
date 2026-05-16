@@ -1,4 +1,4 @@
-import type { JSX } from 'react';
+import { type JSX } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import { routes } from '@/wrappers/routes';

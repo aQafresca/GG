@@ -1,0 +1,38 @@
+@use '@/assets/styles/helpers/functions' as *;
+@use '@/assets/styles/helpers/mixins' as *;
+@use '@/assets/styles/helpers/media' as *;
+
+.join {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  align-items: center;
+  justify-content: space-around;
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: to-rem(20);
+
+  &:last-child {
+    align-items: center;
+  }
+}
+
+.title {
+  @include fluid-text(56, 20);
+
+  line-height: 1;
+  letter-spacing: to-rem(10);
+}
+
+.subtitle {
+  @include fluid-text(56, 20);
+
+  line-height: 1;
+  color: var(--color--accent-secondary);
+}

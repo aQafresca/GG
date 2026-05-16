@@ -1,4 +1,5 @@
 @use '@/assets/styles/helpers/functions' as *;
+@use '@/assets/styles/helpers/media' as *;
 
 $border-width: 5px;
 $polygon: polygon(
@@ -16,7 +17,7 @@ $polygon: polygon(
   0px 80%
 );
 
-.wrapper {
+.card {
   position: relative;
 
   width: to-rem(300);
@@ -25,6 +26,12 @@ $polygon: polygon(
 
   background: var(--swatch--border);
   clip-path: $polygon;
+
+  transition: var(--swatch-transition);
+
+  @include hover {
+    scale: 1.1;
+  }
 
   img {
     position: absolute;

@@ -9,7 +9,7 @@ interface IProps {
 
 export const HeroSection = ({ title, slogan }: IProps) => {
   return (
-    <section className={styles.hero}>
+    <section className={`container ${styles.hero}`}>
       <div className={styles.inner}>
         <img src="src/assets/images/svg/dots.svg" width={70} height={40} alt="dots decoration" />
         <p className={styles.slogan}>{slogan}</p>

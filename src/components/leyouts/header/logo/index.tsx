@@ -4,11 +4,15 @@ import { ROUTES } from '@/shared/constants/navigationMenu.ts';
 
 import styles from './index.module.scss';
 
-export const Logo = () => {
+interface IProps {
+  className?: string;
+}
+
+export const Logo = ({ className }: IProps) => {
   return (
-    <div className={styles.wrapper}>
-      <Link to={ROUTES.HOME}>
-        <img src="src/assets/images/logo.png" alt="логотип" />
+    <div className={`${className} ${styles.wrapper}`}>
+      <Link to={ROUTES.HOME} className={styles.link}>
+        ELS
       </Link>
     </div>
   );

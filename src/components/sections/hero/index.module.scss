@@ -14,7 +14,6 @@
   margin-top: to-rem(-45);
   padding: to-rem(3);
 
-  background: var(--swatch--dark-gray);
   clip-path: polygon(
     calc(100% - 9rem) 0,
     calc(100% - 6rem) 3rem,
@@ -27,6 +26,26 @@
     6rem 3rem,
     9rem 0
   );
+
+  // Создаем слой для фона
+  &::before {
+    content: '';
+
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+
+    background-image: url('src/assets/images/hero_bg.jpeg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    mask-image:
+      linear-gradient(to right, transparent, black 30px, black calc(100% - 30px), transparent),
+      linear-gradient(to bottom, transparent, black 30px, black calc(100% - 30px), transparent);
+    mask-composite: source-in;
+    mask-composite: intersect;
+  }
 }
 
 .inner {

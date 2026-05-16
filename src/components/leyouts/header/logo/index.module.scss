@@ -4,4 +4,11 @@
 
 .wrapper {
   width: 100%;
+
+  @include flex-center;
+}
+
+.link {
+  color: var(--color--accent-primary);
+  text-decoration: none;
 }

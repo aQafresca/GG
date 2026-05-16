@@ -1,12 +1,49 @@
 @use '@/assets/styles/helpers/mixins' as *;
 @use '@/assets/styles/helpers/functions' as *;
-
-.title {
-  @include fluid-text(30, 17);
-
-  max-width: to-rem(300);
-}
+@use '@/assets/styles/helpers/media' as *;
 
 .inner {
-  max-width: to-rem(800);
+  @include tablet {
+    order: 2;
+  }
+}
+
+.faq {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: to-rem(30);
+
+  padding-bottom: to-rem(200);
+
+  background: linear-gradient(to bottom, var(--swatch--transparent) 0%, var(--swatch--border) 100%);
+
+  mask-image: var(--mask--svg-border_bottom), linear-gradient(to bottom, var(--swatch--dark), var(--swatch--dark));
+  mask-repeat: repeat-x, no-repeat;
+  mask-position:
+    bottom left,
+    0 0;
+  mask-size:
+    to-rem(1200) var(--max-h),
+    100% calc(100% - var(--max-h));
+
+  @include tablet {
+    grid-template-columns: 1fr;
+  }
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: to-rem(20);
+  order: 1;
+
+  text-align: center;
+
+  @include tablet {
+    order: 2;
+  }
+}
+
+.text {
+  text-align: center;
 }

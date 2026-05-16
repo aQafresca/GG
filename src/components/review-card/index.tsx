@@ -7,7 +7,7 @@ interface IProps {
 
 export const ReviewCard = ({ src, alt }: IProps) => {
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.card}>
       <img src={src} alt={alt} width={300} height={400} />
     </div>
   );

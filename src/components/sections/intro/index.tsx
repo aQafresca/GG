@@ -1,9 +1,13 @@
 import styles from './index.module.scss';
 
-export const DescriptionSection = () => {
+export const IntroSection = () => {
   return (
-    <section className={styles.wrapper}>
-      <div className={styles.animation}>dsfsdf</div>
+    <section className={`container ${styles.intro}`}>
+      <div className={styles.animation}>
+        <div className={styles.barcode}>
+          <div className={styles.line} />
+        </div>
+      </div>
       <div className={styles.description}>
         <p className={styles.uppercase}>
           Декор светом - это не роскошь, а база. Аплайт «красит» стены в ваши цвета и создает уют, а движущиеся головы
