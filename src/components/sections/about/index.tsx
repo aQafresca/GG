@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 
+import carImg from '@/assets/images/about_car.webp';
 import { Button } from '@/components/buttons/base';
 import { ROUTES } from '@/shared/constants/navigationMenu.ts';
 
@@ -11,7 +12,7 @@ export const AboutSection = () => {
   return (
     <section className={`container ${styles.about}`}>
       <div className={styles.media}>
-        <img className={styles.img} src="src/assets/images/about_car.webp" alt="Автомобиль" />
+        <img className={styles.img} src={carImg} alt="Автомобиль" />
       </div>
       <div className={styles.description}>
         <div className={styles.inner}>
