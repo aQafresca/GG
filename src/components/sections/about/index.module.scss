@@ -26,7 +26,6 @@
   mask-image:
     linear-gradient(to right, transparent, black 30px, black calc(100% - 30px), transparent),
     linear-gradient(to bottom, transparent, black 30px, black calc(100% - 30px), transparent);
-  mask-composite: source-in;
   mask-composite: intersect;
 }
 
