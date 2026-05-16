@@ -15,7 +15,14 @@ h2 {
   @include fluid-text(72, 20);
 }
 
-h1,
-h2 {
-  font-family: var(--font--secondary-family), sans-serif;
+h4 {
+  font-family: var(--font--primary), sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+h5 {
+  font-family: var(--font--secondary), sans-serif;
+  color: var(--color--accent-secondary);
+  text-transform: uppercase;
 }

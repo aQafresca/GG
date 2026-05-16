@@ -1,7 +1,7 @@
 @use '@/assets/styles/helpers/functions' as *;
 @use '@/assets/styles/helpers/mixins' as *;
 
-.wrapper {
+.faq {
   width: 100%;
   padding: 0 to-rem(10);
   border-bottom: 1px solid var(--swatch--border);
@@ -21,7 +21,7 @@
 }
 
 .icon {
-  color: var(--colar--accent);
+  color: var(--color--accent-primary);
 
   @include fluid-text(20, 16);
 
@@ -41,17 +41,21 @@
   transition: grid-template-rows var(--transition-duration) ease;
 }
 
-.answer {
+.inner {
   overflow: hidden;
   min-height: 0;
 }
 
-.inner {
+.answer {
+  min-height: to-rem(30);
   padding-bottom: to-rem(10);
 }
 
 .title {
-  color: var(--swatch--light);
+  font-family: var(--font--secondary), serif;
+  line-height: to-rem(20);
+  color: var(--color--accent-primary);
+  text-align: left;
 
-  @include fluid-text(22, 20);
+  @include fluid-text(22, 16);
 }

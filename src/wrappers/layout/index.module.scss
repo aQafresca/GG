@@ -1,5 +1,6 @@
 @use '@/assets/styles/helpers/mixins' as *;
 @use '@/assets/styles/helpers/functions' as *;
+@use '@/assets/styles/helpers/media' as *;
 
 .layout {
   display: flex;
@@ -7,7 +8,7 @@
 
   min-height: 100%;
 
-  font-family: var(--font--primary-family), sans-serif;
+  font-family: var(--font--primary), sans-serif;
   color: var(--swatch--light);
 
   background-color: var(--swatch--dark);
@@ -29,4 +30,9 @@
   gap: to-rem(50);
 
   width: 100%;
+  margin: 0 auto;
+
+  @include mobile {
+    gap: to-rem(30);
+  }
 }

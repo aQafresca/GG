@@ -1,0 +1,12 @@
+@use '@/assets/styles/helpers/functions' as *;
+@use '@/assets/styles/helpers/media' as *;
+
+.link {
+  width: to-rem(60);
+  height: to-rem(50);
+  padding: to-rem(9);
+}
+
+.phone {
+  fill: var(--color--accent-primary);
+}
