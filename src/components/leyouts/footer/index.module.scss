@@ -1,0 +1,71 @@
+@use '@/assets/styles/variables' as *;
+@use '@/assets/styles/helpers/mixins' as *;
+@use '@/assets/styles/helpers/functions' as *;
+@use '@/assets/styles/helpers/media' as *;
+
+.footer {
+  //  height: to-rem(400);
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+
+  color: black;
+
+  background: linear-gradient(to bottom, var(--swatch--accent) 0%, var(--swatch--dark) 100%);
+
+  mask-image: var(--mask--svg-border), linear-gradient(var(--swatch--dark), var(--swatch--dark));
+  mask-image: var(--mask--svg-border), linear-gradient(var(--swatch--dark), var(--swatch--dark));
+  mask-repeat: repeat-x, no-repeat;
+  mask-repeat: repeat-x, no-repeat;
+  mask-position:
+    top left,
+    0 var(--max-h);
+  mask-position:
+    top left,
+    0 var(--max-h);
+  mask-size:
+    to-rem(1200) var(--max-h),
+    100% calc(100% - var(--max-h));
+  mask-size:
+    to-rem(1200) var(--max-h),
+    100% calc(100% - var(--max-h));
+}
+
+.wrapper {
+  width: 100%;
+  margin-top: to-rem(120);
+
+  @include tablet-above {
+    margin-top: to-rem(150);
+  }
+}
+
+.title {
+  @include fluid-text(200, 50);
+
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.box {
+  display: flex;
+  justify-content: space-between;
+
+  @include mobile-above {
+    flex-direction: column;
+    gap: to-rem(30);
+    max-width: to-rem(200);
+  }
+}
+
+.social {
+  display: flex;
+  max-width: to-rem(1200);
+
+  @include mobile {
+    flex-direction: column;
+    gap: to-rem(30);
+  }
+}

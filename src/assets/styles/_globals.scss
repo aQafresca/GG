@@ -1,3 +1,21 @@
-body {
-  background: red;
+@use '@/assets/styles/variables' as *;
+@use '@/assets/styles/helpers/mixins' as *;
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+h1 {
+  @include fluid-text(98, 40);
+}
+
+h2 {
+  @include fluid-text(72, 20);
+}
+
+h1,
+h2 {
+  font-family: var(--font--secondary-family), sans-serif;
 }

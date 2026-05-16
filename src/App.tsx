@@ -1,9 +1,10 @@
-function App() {
-  return (
-    <>
-      <div>test</div>
-    </>
-  );
+import type { JSX } from 'react';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+
+import { routes } from '@/wrappers/routes';
+
+function App(): JSX.Element {
+  return <RouterProvider router={createBrowserRouter(routes)} />;
 }
 
 export default App;
