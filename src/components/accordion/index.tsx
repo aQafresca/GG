@@ -28,8 +28,8 @@ export const Accordion = ({ title, children, open, onToggle }: IProps) => {
       </button>
 
       <div id={id} className={styles.content} role="region" aria-labelledby={buttonId}>
-        <div className={styles.answer}>
-          <div className={styles.inner}>{children}</div>
+        <div className={styles.inner}>
+          <p className={styles.answer}>{children}</p>
         </div>
       </div>
     </div>

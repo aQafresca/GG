@@ -1,11 +1,10 @@
-import { HeroSection } from '@/components/sections/hero';
-import { heroSectionCfg } from '@/shared/lib/config/heroSection.config.ts';
+import { WhyWe } from '@/components/sections/why-we';
 
 const AboutPage = () => {
   return (
-    <div>
-      <HeroSection title={heroSectionCfg.ABOUT.title} slogan={heroSectionCfg.ABOUT.slogan} />
-    </div>
+    <>
+      <WhyWe />
+    </>
   );
 };
 

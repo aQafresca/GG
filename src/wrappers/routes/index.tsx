@@ -16,8 +16,8 @@ export const routes: RouteObject[] = [
         lazy: () => import('@/pages/about').then((module) => ({ Component: module.default })),
       },
       {
-        path: RouterManager.path('faq'),
-        lazy: () => import('@/pages/faq').then((module) => ({ Component: module.default })),
+        path: RouterManager.path('portfolio'),
+        lazy: () => import('@/pages/portfolio').then((module) => ({ Component: module.default })),
       },
     ],
   },
